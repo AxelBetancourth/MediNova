@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FBCC15D0-140D-420D-906E-76071C62F506}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPCtlXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Huella_dll\DPFPCtlXTypeLibNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPCtlXWrapperNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Huella_dll\DPFPCtlXWrapperNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Huella_dll\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Huella_dll\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPGuiNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d4f4a0bd9c559145, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Huella_dll\DPFPGuiNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Huella_dll\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Huella_dll\DPFPShrXTypeLibNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPVerNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Huella_dll\DPFPVerNET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador\Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\Empresa.Designer.cs">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\PMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\PMedico.Designer.cs">
+      <DependentUpon>PMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\FormProcesarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\FormProcesarPago.Designer.cs">
+      <DependentUpon>FormProcesarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\FormVentaLibre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\FormVentaLibre.Designer.cs">
+      <DependentUpon>FormVentaLibre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\FormHistorialVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\FormHistorialVentas.Designer.cs">
+      <DependentUpon>FormHistorialVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\GestionExamenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\GestionExamenes.Designer.cs">
+      <DependentUpon>GestionExamenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmacia\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmacia\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Calendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Calendario.Designer.cs">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Consultas.Designer.cs">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\ConsultaMedica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\ConsultaMedica.Designer.cs">
+      <DependentUpon>ConsultaMedica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\CompletarExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\CompletarExpediente.Designer.cs">
+      <DependentUpon>CompletarExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Prescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Prescripcion.Designer.cs">
+      <DependentUpon>Prescripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\HistorialRecetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\HistorialRecetas.Designer.cs">
+      <DependentUpon>HistorialRecetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Enfermedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Enfermedad.Designer.cs">
+      <DependentUpon>Enfermedad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Examenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Examenes.Designer.cs">
+      <DependentUpon>Examenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\GestionEnfermedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\GestionEnfermedades.Designer.cs">
+      <DependentUpon>GestionEnfermedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medico\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\ucDays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Medico\ucDays.Designer.cs">
+      <DependentUpon>ucDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\ucEditarExamen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Medico\ucEditarExamen.Designer.cs">
+      <DependentUpon>ucEditarExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\CaptureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\CaptureForm.Designer.cs">
+      <DependentUpon>CaptureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\SesionUsuario.cs" />
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Registrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Registrar.Designer.cs">
+      <DependentUpon>Registrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\AgendarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\AgendarCita.Designer.cs">
+      <DependentUpon>AgendarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\Calendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\Calendario.Designer.cs">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\Citas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\Citas.Designer.cs">
+      <DependentUpon>Citas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\Horario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\Horario.Designer.cs">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\Pacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\Pacientes.Designer.cs">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\RegistrarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\RegistrarCita.Designer.cs">
+      <DependentUpon>RegistrarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\ucDays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\ucDays.Designer.cs">
+      <DependentUpon>ucDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcionista\ucHoraSlot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Recepcionista\ucHoraSlot.Designer.cs">
+      <DependentUpon>ucHoraSlot.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Administrador\Empresa.resx">
+      <DependentUpon>Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\PMedico.resx">
+      <DependentUpon>PMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\FormProcesarPago.resx">
+      <DependentUpon>FormProcesarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\FormVentaLibre.resx">
+      <DependentUpon>FormVentaLibre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\FormHistorialVentas.resx">
+      <DependentUpon>FormHistorialVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\GestionExamenes.resx">
+      <DependentUpon>GestionExamenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmacia\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Calendario.resx">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\ConsultaMedica.resx">
+      <DependentUpon>ConsultaMedica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Consultas.resx">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\HistorialRecetas.resx">
+      <DependentUpon>HistorialRecetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\Prescripcion.resx">
+      <DependentUpon>Prescripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\ucDays.resx">
+      <DependentUpon>ucDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medico\ucEditarExamen.resx">
+      <DependentUpon>ucEditarExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\CaptureForm.resx">
+      <DependentUpon>CaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Registrar.resx">
+      <DependentUpon>Registrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\AgendarCita.resx">
+      <DependentUpon>AgendarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\Calendario.resx">
+      <DependentUpon>Calendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\Citas.resx">
+      <DependentUpon>Citas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\Horario.resx">
+      <DependentUpon>Horario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\Pacientes.resx">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\RegistrarCita.resx">
+      <DependentUpon>RegistrarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\ucDays.resx">
+      <DependentUpon>ucDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcionista\ucHoraSlot.resx">
+      <DependentUpon>ucHoraSlot.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="bin\Debug\CapaPresentacion.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{8a7f7b1f-386d-4c85-a071-8b0e86e41e63}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{ceae47d2-c60d-4a3d-9eba-83454287a670}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ImgLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ImgBaner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\huella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\huella-dactilar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\recuperar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\mano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\agregar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\rol_usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\_recuperar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\_usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\_casa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\RecuperarB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\flecha-izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\flecha-derecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\cerrar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\hora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CapaPresentacion.exe" />
+    <Content Include="bin\Debug\CapaPresentacion.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>

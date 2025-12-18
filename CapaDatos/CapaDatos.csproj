@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A7F7B1F-386D-4C85-A071-8B0E86E41E63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaDatos</RootNamespace>
+    <AssemblyName>CapaDatos</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDatos\MediNovaContext.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TDiagnostico.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\THorario.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TMedicamento.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TExamen.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TEnfermedad.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TPaciente.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TDoctor.cs" />
+    <Compile Include="BaseDatos\Tablas\Catalogos\TEmpresa.cs" />
+    <Compile Include="BaseDatos\Tablas\ControlCitas\TCita.cs" />
+    <Compile Include="BaseDatos\Tablas\ExpedienteClinico\TConsulta.cs" />
+    <Compile Include="BaseDatos\Tablas\ExpedienteClinico\TExpendiente.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TDetalleFactura.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TDetalleReceta.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TDetalleVenta.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TFactura.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TInventarioMovimiento.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TReceta.cs" />
+    <Compile Include="BaseDatos\Tablas\InventarioYFacturacion\TVenta.cs" />
+    <Compile Include="BaseDatos\Tablas\Login\TRol.cs" />
+    <Compile Include="BaseDatos\Tablas\Login\TUsuario.cs" />
+    <Compile Include="Core\IRepository.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repository.cs" />
+    <Compile Include="Core\UnitOfWork.cs" />
+    <Compile Include="Migrations\202512130011214_CreacionBaseDatos.cs" />
+    <Compile Include="Migrations\202512130011214_CreacionBaseDatos.Designer.cs">
+      <DependentUpon>202512130011214_CreacionBaseDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <!-- Administrador -->
+    <Compile Include="Administrador\DRol.cs" />
+    <Compile Include="Administrador\DUsuario.cs" />
+    <!-- Medico -->
+    <Compile Include="Medico\DDiagnostico.cs" />
+    <Compile Include="Medico\DExpediente.cs" />
+    <Compile Include="Medico\DConsulta.cs" />
+    <Compile Include="Medico\DCitas.cs" />
+    <!-- Farmacia -->
+    <Compile Include="Farmacia\DInventarioMovimiento.cs" />
+    <Compile Include="Farmacia\DReceta.cs" />
+    <Compile Include="Farmacia\DVenta.cs" />
+    <Compile Include="Farmacia\DFactura.cs" />
+    <!-- Compartido -->
+    <Compile Include="Compartido\DMedicamento.cs" />
+    <Compile Include="Compartido\DPaciente.cs" />
+    <Compile Include="Compartido\DDoctor.cs" />
+    <Compile Include="Compartido\DEnfermedad.cs" />
+    <Compile Include="Compartido\DExamen.cs" />
+    <Compile Include="Compartido\DEmpresa.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202512130011214_CreacionBaseDatos.resx">
+      <DependentUpon>202512130011214_CreacionBaseDatos.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
